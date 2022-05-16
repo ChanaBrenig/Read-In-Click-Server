@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
 const User = require('../model/userSchema')
 
 const signUp = async (req, res) => {
     let myUser = await new User(req.body.user)
-    // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     console.log(myUser);
     myUser.save()
 
@@ -18,6 +16,8 @@ const signUp = async (req, res) => {
         })
 }
 
+
+// const jwt = require('jsonwebtoken');
 // const createUser = asy0nc (req, res) => {
 //     console.log("!!!!!");
 //     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
@@ -33,7 +33,6 @@ const signUp = async (req, res) => {
 
 const signInById = (req, res) => {
     console.log("#######signInById########");
-    // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     User.findOne({ userId: req.params.userId })
         .then((user) => {
             console.log('its good');

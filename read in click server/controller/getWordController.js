@@ -6,7 +6,6 @@ const getWords = async (req, res) => {
         console.log('server success')
         console.log(req.params.kind)
         let words = await word.find({ kind: req.params.kind })
-        // res.status(200).json({ words })
         console.log("w:"+words)
         res.send({ words })
         

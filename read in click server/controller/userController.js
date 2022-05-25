@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 const userSchema = require('../model/userSchema');
 const User = require('../model/userSchema')
 var MongoClient = require('mongodb').MongoClient;
-var urlToCreate = "mongodb://localhost/Read-In-Click";//change localhost to srv1 in the seminar
+var urlToCreate = "mongodb://localhost/Read-In-Click";
 var url = "mongodb://localhost:27017/";
+
 const signUp = async (req, res) => {
     let myUser = await new User(req.body.user)
     console.log(myUser);
@@ -59,14 +60,6 @@ MongoClient.connect(url, function (err, db) {
 })})
 ;
 }
-
-
-
-
-
-
-
-
 
 
 module.exports = { signUp, signInById}

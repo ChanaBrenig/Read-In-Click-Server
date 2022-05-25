@@ -11,9 +11,21 @@ const userSchema = mongoose.Schema({
     },
     userId: {
         type: String,
-        // minlength: 9,
+        minlength: 9,
+        maxlength: 9,
+        required: true
+    },
+    password: {
+        type: String,
+        minlength: 6,
         // maxlength: 9,
         required: true
+    },
+    status: {
+        // type: String,
+        // minlength: 6,
+        // maxlength: 9,
+        // required: true
     }
 })
 
